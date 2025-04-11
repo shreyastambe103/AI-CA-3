@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Details</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container scrollable">
+        <h1 class="fade-in">Patient Details</h1>
+        <form action="/save_patient_details" method="post">
+        <form id="detailsForm" class="slide-in">
+            <input type="hidden" name="image_path" value="{{ image_path }}">
+
+            <div class="form-group">
+                <label for="name"><i class="fas fa-user"></i> Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter patient's name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age"><i class="fas fa-hourglass-half"></i> Age:</label>
+                <input type="number" id="age" name="age" placeholder="Enter age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gender"><i class="fas fa-venus-mars"></i> Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="contact"><i class="fas fa-phone"></i> Contact Number:</label>
+                <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" placeholder="10-digit contact number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="history"><i class="fas fa-notes-medical"></i> Previous Medical History:</label>
+                <textarea id="history" name="history" rows="4" placeholder="Describe previous medical history" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="labName"><i class="fas fa-flask"></i> Lab Name:</label>
+                <input type="text" id="labName" name="labName" placeholder="Enter lab name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="examDate"><i class="fas fa-calendar-alt"></i> Exam Date:</label>
+                <input type="date" id="examDate" name="examDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="examTime"><i class="fas fa-clock"></i> Exam Time:</label>
+                <input type="time" id="examTime" name="examTime" required>
+            </div>
+
+            <div class="form-group">
+                <label for="examType"><i class="fas fa-file-medical"></i> Type of Exam:</label>
+                <input type="text" id="examType" name="examType" placeholder="Enter type of exam" required>
+            </div>
+            <button type="submit" class="hover-btn">Submit Details</button>
+            <button type="reset" class="hover-btn reset-btn">Reset</button>
+        </form>
+        </form>
+
+        <div id="loading" style="display: none;">Submitting details...</div>
+    </div>
+</body>
+</html>

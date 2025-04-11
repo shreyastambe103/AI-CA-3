@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        /* CSS for background image */
+        body {
+            background: url("{{ url_for('static', filename='images/medical_bg1.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffcc00;
+        }
+
+        h4 {
+            color: #ffcc00;
+            margin-bottom: 20px;
+        }
+
+        /* Custom styling for the button */
+        .download-btn {
+            display: inline-block;
+            background-color: #1c2e4a;
+            color: #FFFFFF;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            position: relative;
+            z-index: 10; /* Make sure the button is in front */
+        }
+
+        .download-btn:hover {
+            background-color: #0A6ED3;
+            color: #FFFFFF;
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Analysis Complete!</h1>
+    <hr>
+    <h3>Prediction: </h3>
+    <h4>{{ prediction }}</h4>
+    <hr>
+    <p>Your analysis report is ready. Click the button below to download:</p>
+
+    <!-- Wrapper for button with background -->
+    <div class="position-relative">
+        <!-- Background for the button -->
+        <div class="button-background"></div>
+
+        <!-- Download Button -->
+        <a href="{{ pdf_path }}" download="report.pdf" class="download-btn">Download Report</a>
+    </div>
+</div>
+</body>
+</html>

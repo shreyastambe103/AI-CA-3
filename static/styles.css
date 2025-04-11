@@ -1,0 +1,222 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    font-size: 16px;
+    overflow-y: auto;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 35px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    max-height: 85vh; /* Adjusted for better responsiveness */
+    overflow-y: auto; /* Enables scrolling if content is too tall */
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+    padding: 0.8rem;
+    width: 100%;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #00c6ff;
+    box-shadow: 0 0 8px rgba(0, 198, 255, 0.5);
+}
+
+button {
+    padding: 0.8rem 2rem;
+    border: none;
+    background-color: #00c6ff;
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #0072ff;
+    transform: scale(1.05);
+}
+
+button.reset-btn {
+    background-color: #f44336;
+}
+
+button.reset-btn:hover {
+    background-color: #d32f2f;
+}
+
+#loading {
+    color: #ff9800;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 0.6rem 1.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Circular Progress Bar Styling */
+.box {
+    background: #fff;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.box .percent {
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+.box .percent svg {
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+.box .percent svg circle {
+    width: 150px;
+    height: 150px;
+    fill: none;
+    stroke-width: 10;
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    stroke-linecap: round;
+}
+
+.box .percent svg circle:nth-child(1) {
+    stroke-dashoffset: 0;
+    stroke: #f3f3f3;
+}
+
+.box .percent svg circle:nth-child(2) {
+    stroke: #03a9f4;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s ease; /* Adjusted for smooth animation */
+}
+
+.box .percent .num {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: #111;
+}
+
+.box .percent .num h2 {
+    font-size: 24px;
+}
+
+.text {
+    color: #999;
+    font-weight: 700;
+}
+.button{
+
+    /* CSS */
+    .button-43 {
+      background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+      border-radius: .5rem;
+      box-sizing: border-box;
+      color: #FFFFFF;
+      display: flex;
+      font-size: 16px;
+      justify-content: center;
+      padding: 1rem 1.75rem;
+      text-decoration: none;
+      width: 100%;
+      border: 0;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .button-43:hover {
+      background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+    }
+
+    @media (min-width: 768px) {
+      .button-43 {
+        padding: 1rem 2rem;
+      }
+    }
+}
